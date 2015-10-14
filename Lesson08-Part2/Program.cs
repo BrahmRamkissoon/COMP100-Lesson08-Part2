@@ -25,8 +25,9 @@ namespace Lesson08_Part2
             double loop2Avg = 0;
             double loop3Avg = 0;
             double loop4Avg = 0;
+            int outerLimit = 1100; // to get 1000 ms total 
 
-            for (int outer = 0; outer < 60; outer++)
+            for (int outer = 0; outer < outerLimit; outer++)
             {
                 Console.WriteLine(" \n+++++++++++++LOOP 1 - Slow+++++++++++++++\n\n");
                 Stopwatch loop1 = Stopwatch.StartNew();
@@ -116,30 +117,31 @@ namespace Lesson08_Part2
 
                 // output totals
                 Console.WriteLine("\n+++++++++++++++++++++++++++++++++");
-                Console.WriteLine($"Loop 1: {loop1Total} ms");
-                Console.WriteLine($"Loop 2: {loop2Total} ms");
-                Console.WriteLine($"Loop 1b: {loop3Total} ms");
-                Console.WriteLine($"Loop 2b: {loop4Total} ms");
+                Console.WriteLine($"Loop 1 total: {loop1Total} ms");
+                Console.WriteLine($"Loop 2 total: {loop2Total} ms");
+                Console.WriteLine($"Loop 1b total: {loop3Total} ms");
+                Console.WriteLine($"Loop 2b total: {loop4Total} ms");
                 Console.WriteLine("\n+++++++++++++++++++++++++++++++++");
 
-                // calc Averages
-                loop1Avg = loop1Total / outer +1 ;
-                loop2Avg = loop2Total / outer +1 ;
-                loop3Avg = loop3Total / outer +1;
-                loop4Avg = loop4Total / outer +1;
-
-                // output avgs
-                Console.WriteLine("\n+++++++++++++++++++++++++++++++++");
-                Console.WriteLine($"Loop 1 Average: {loop1Avg} ms");
-                Console.WriteLine($"Loop 2 Average: {loop2Avg} ms");
-                Console.WriteLine($"Loop 1b Average: {loop3Avg} ms");
-                Console.WriteLine($"Loop 2b Average: {loop4Avg} ms");
-                Console.WriteLine("\n+++++++++++++++++++++++++++++++++");
+                
 
             } // outer outer loop
-           
 
-            
+            // calc Averages
+            loop1Avg = loop1Total / outerLimit + 1;
+            loop2Avg = loop2Total / outerLimit + 1;
+            loop3Avg = loop3Total / outerLimit + 1;
+            loop4Avg = loop4Total / outerLimit + 1;
+
+            // output avgs
+            Console.WriteLine("\n+++++++++++++++++++++++++++++++++");
+            Console.WriteLine($"Loop 1 Average: {loop1Avg} ms");
+            Console.WriteLine($"Loop 2 Average: {loop2Avg} ms");
+            Console.WriteLine($"Loop 1b Average: {loop3Avg} ms");
+            Console.WriteLine($"Loop 2b Average: {loop4Avg} ms");
+            Console.WriteLine("\n+++++++++++++++++++++++++++++++++");
+
+
             // better to test for row instead of column, so we make a variable
             /* Desired output for chessboard
             W B W B W B W B 
