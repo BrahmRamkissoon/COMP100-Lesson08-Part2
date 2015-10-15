@@ -8,7 +8,7 @@ using System.Diagnostics;
 /**
 * Nested loops & diagnostics -  Improving Loop performance
 * exclude uncessary calculations
-* compare to 0 , --note-- on my machine this was slower by a lot !
+* compare to 0 , 
 * consider order of evaluation for short-circuit , test for most likely condition first
 */
 namespace Lesson08_Part2
@@ -55,10 +55,7 @@ namespace Lesson08_Part2
 
                     for ( int col = 0 ; col < 4 ; col++ )
                     {
-                        if ( row % 2 != 0 )       // Odd row
-                        {
-                            Console.Write(pattern);
-                        }
+                        Console.Write(pattern);
                     } // Inner loop
                     Console.WriteLine();
                 } // outer loop
@@ -90,10 +87,7 @@ namespace Lesson08_Part2
 
                     for ( int col = 4 ; col > 0 ; col-- )
                     {
-                        if ( row % 2 != 0 )       // Odd row
-                        {
-                            Console.Write(pattern);
-                        }
+                        Console.Write(pattern);
                     } // Inner loop
                     Console.WriteLine();
                 } // outer loop
